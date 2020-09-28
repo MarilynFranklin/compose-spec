@@ -2341,6 +2341,13 @@ Similarly, the following syntax allows you to specify mandatory variables:
 - `${VARIABLE?err}` exits with an error message containing `err` if
   `VARIABLE` is unset in the environment.
 
+You may define alternative values with the `:+` or `+` separators:
+
+- `${VARIABLE:+alternate}` evaluates to `alternate` only if `VARIABLE` is set
+  in the environment.
+- `${VARIABLE+alternate}` evaluates to `alternate` if `VARIABLE` is set or
+  empty in the environment.
+
 Other extended shell-style features, such as `${VARIABLE/foo/bar}`, are not
 supported by the Compose specification.
 
